@@ -30,6 +30,8 @@ public class opciones_login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         SetImageButton("src/Image/deshacer.png",Regresar);
+        SetImageButton("src/Image/Cliente.png",CLIENTE);
+        SetImageButton("src/Image/Empleado.png",EMPLEADO);
        
 
         
@@ -66,33 +68,43 @@ public class opciones_login extends javax.swing.JFrame {
         CLIENTE = new javax.swing.JButton();
         EMPLEADO = new javax.swing.JButton();
         Regresar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(232, 232, 232));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Eras Demi ITC", 1, 60)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Eras Demi ITC", 1, 100)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 145, 77));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Eres?");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Eras Demi ITC", 0, 36)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Eras Demi ITC", 0, 60)); // NOI18N
         jLabel6.setText("¿Que tipo de usuario");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 1070, 10));
 
         CLIENTE.setText("CLIENTE");
+        CLIENTE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CLIENTE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CLIENTEActionPerformed(evt);
             }
         });
+        jPanel2.add(CLIENTE, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 311, 287));
 
         EMPLEADO.setText("EMPLEADO");
+        EMPLEADO.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EMPLEADO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EMPLEADOActionPerformed(evt);
             }
         });
+        jPanel2.add(EMPLEADO, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 311, 287));
 
         Regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/deshacer.png"))); // NOI18N
         Regresar.setBorder(null);
@@ -102,50 +114,19 @@ public class opciones_login extends javax.swing.JFrame {
                 RegresarActionPerformed(evt);
             }
         });
+        jPanel2.add(Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 41, 37));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator3)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(CLIENTE, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
-                .addComponent(EMPLEADO, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(298, 298, 298)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CLIENTE, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EMPLEADO, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(194, Short.MAX_VALUE))
-        );
+        jLabel7.setFont(new java.awt.Font("Eras Demi ITC", 1, 60)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 145, 77));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Empleado");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Eras Demi ITC", 1, 60)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 145, 77));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Cliente");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 265, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, -1));
 
@@ -223,6 +204,8 @@ public class opciones_login extends javax.swing.JFrame {
     private javax.swing.JButton Regresar;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
