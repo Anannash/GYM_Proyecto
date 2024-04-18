@@ -17,6 +17,7 @@ public class registro_usuario extends javax.swing.JFrame {
    
     public registro_usuario() {
     initComponents();
+    this.setLocationRelativeTo(this);
     
     }
    private void seleccionarImagen() {

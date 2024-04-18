@@ -53,29 +53,51 @@ public class entrevista_rutina extends javax.swing.JFrame {
                     double imc = Double.parseDouble(imctxt.getText());
 
                     // Determinar qué imagen mostrar según el valor ingresado
-                    ImageIcon imagen;
+                    ImageIcon icon;
+                     ImageIcon imagen;
                     if (imc < 18.5) {
-                        imagen = new ImageIcon("src/Image/1azul.png");
+                        
+                        icon = new ImageIcon("src/Image/1azul.png");
+                         Image images = icon.getImage().getScaledInstance(LabelIMC.getWidth(), LabelIMC.getHeight(), Image.SCALE_SMOOTH);
+                          imagen = new ImageIcon(images);
+                         
                         System.out.println("Inserto 1");
                     } else if (imc <= 24.9) {
-                        imagen = new ImageIcon("src/Image/2Verde.png");
+                        icon = new ImageIcon("src/Image/2Verde.png");
+                        Image images = icon.getImage().getScaledInstance(LabelIMC.getWidth(), LabelIMC.getHeight(), Image.SCALE_SMOOTH);
+                          imagen = new ImageIcon(images);
+                         
                         System.out.println("Inserto 2");
                     } else if (imc <= 29.9) {
-                        imagen = new ImageIcon("src/Image/3Amarillo.png");
+                        icon = new ImageIcon("src/Image/3Amarillo.png");
+                        Image images = icon.getImage().getScaledInstance(LabelIMC.getWidth(), LabelIMC.getHeight(), Image.SCALE_SMOOTH);
+                          imagen = new ImageIcon(images);
+                         
                         System.out.println("Inserto 3");
                     } else if (imc <= 34.9) {
-                        imagen = new ImageIcon("src/Image/4Naranja.png");
+                        icon = new ImageIcon("src/Image/4Naranja.png");
+                        Image images = icon.getImage().getScaledInstance(LabelIMC.getWidth(), LabelIMC.getHeight(), Image.SCALE_SMOOTH);
+                          imagen = new ImageIcon(images);
+                         
                         System.out.println("Inserto 4");
                     } else if (imc <= 39.9) {
-                        imagen = new ImageIcon("src/Image/5Anaranjado.png");
+                        icon = new ImageIcon("src/Image/5Anaranjado.png");
+                        Image images = icon.getImage().getScaledInstance(LabelIMC.getWidth(), LabelIMC.getHeight(), Image.SCALE_SMOOTH);
+                          imagen = new ImageIcon(images); 
+                        
                         System.out.println("Inserto 5");
                     } else {
-                        imagen = new ImageIcon("src/Image/6Rojo.png");
+                        icon = new ImageIcon("src/Image/6Rojo.png");
+                        Image images = icon.getImage().getScaledInstance(LabelIMC.getWidth(), LabelIMC.getHeight(), Image.SCALE_SMOOTH);
+                          imagen = new ImageIcon(images);
+                        
                         System.out.println("Inserto 6");
                     }
 
                     // Establecer la imagen en el JLabel
                     LabelIMC.setIcon(imagen);
+                    
+                 
                 } catch (NumberFormatException ex) {
                     // En caso de que el texto no sea un número válido, no se actualiza la imagen
                     LabelIMC.setIcon(null);
@@ -113,10 +135,8 @@ public class entrevista_rutina extends javax.swing.JFrame {
         LNivel = new javax.swing.JLabel();
         C1 = new javax.swing.JCheckBox();
         C2 = new javax.swing.JCheckBox();
-        L9 = new javax.swing.JCheckBox();
         NivelConFisBOX = new javax.swing.JComboBox<>();
         LLesiones = new javax.swing.JLabel();
-        LLimitaciones = new javax.swing.JLabel();
         L1 = new javax.swing.JCheckBox();
         L3 = new javax.swing.JCheckBox();
         C5 = new javax.swing.JCheckBox();
@@ -125,28 +145,21 @@ public class entrevista_rutina extends javax.swing.JFrame {
         LSexo = new javax.swing.JLabel();
         sexotxt = new javax.swing.JTextField();
         L6 = new javax.swing.JCheckBox();
-        L5 = new javax.swing.JCheckBox();
         L2 = new javax.swing.JCheckBox();
         L7 = new javax.swing.JCheckBox();
         L8 = new javax.swing.JCheckBox();
         L4 = new javax.swing.JCheckBox();
         L10 = new javax.swing.JCheckBox();
         C3 = new javax.swing.JCheckBox();
-        C4 = new javax.swing.JCheckBox();
         C6 = new javax.swing.JCheckBox();
-        LF2 = new javax.swing.JCheckBox();
-        LF3 = new javax.swing.JCheckBox();
-        LF1 = new javax.swing.JCheckBox();
-        LF4 = new javax.swing.JCheckBox();
         LObjetivos = new javax.swing.JLabel();
         Ob1 = new javax.swing.JRadioButton();
         Ob3 = new javax.swing.JRadioButton();
         Ob5 = new javax.swing.JRadioButton();
         Ob2 = new javax.swing.JRadioButton();
-        Ob6 = new javax.swing.JRadioButton();
-        Ob4 = new javax.swing.JRadioButton();
         LabelIMC = new javax.swing.JLabel();
         LLesionesIma = new javax.swing.JLabel();
+        completarbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -203,7 +216,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
-        jPanel1.setBackground(new java.awt.Color(242, 242, 242));
+        jPanel1.setBackground(new java.awt.Color(244, 238, 238));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -273,12 +286,12 @@ public class entrevista_rutina extends javax.swing.JFrame {
         LCondiciones.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LCondiciones.setForeground(new java.awt.Color(0, 0, 0));
         LCondiciones.setText("Condiciones médicas crónicas");
-        jPanel1.add(LCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 346, -1, -1));
+        jPanel1.add(LCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 270, 30));
 
         LNivel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LNivel.setForeground(new java.awt.Color(0, 0, 0));
-        LNivel.setText("Nivel de condicion fisica");
-        jPanel1.add(LNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, -1, -1));
+        LNivel.setText("Nivel de condicion fisica:");
+        jPanel1.add(LNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         C1.setText("Asma");
         C1.addActionListener(new java.awt.event.ActionListener() {
@@ -286,7 +299,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 C1ActionPerformed(evt);
             }
         });
-        jPanel1.add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, -1, -1));
+        jPanel1.add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
         C2.setText("Artritis");
         C2.addActionListener(new java.awt.event.ActionListener() {
@@ -294,15 +307,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 C2ActionPerformed(evt);
             }
         });
-        jPanel1.add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, -1, -1));
-
-        L9.setText("Desgarro de ligamento cruzado anterior");
-        L9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                L9ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(L9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 620, -1, -1));
+        jPanel1.add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
 
         NivelConFisBOX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Principiante", "Intermedio", "Avanzado" }));
         NivelConFisBOX.addActionListener(new java.awt.event.ActionListener() {
@@ -315,17 +320,12 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 NivelConFisBOXKeyPressed(evt);
             }
         });
-        jPanel1.add(NivelConFisBOX, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 220, 30));
+        jPanel1.add(NivelConFisBOX, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 120, 30));
 
         LLesiones.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LLesiones.setForeground(new java.awt.Color(0, 0, 0));
         LLesiones.setText("Lesiones previas");
-        jPanel1.add(LLesiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 346, -1, -1));
-
-        LLimitaciones.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        LLimitaciones.setForeground(new java.awt.Color(0, 0, 0));
-        LLimitaciones.setText("Limitaciones físicas");
-        jPanel1.add(LLimitaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, -1, -1));
+        jPanel1.add(LLesiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
 
         L1.setText("Esguince de tobillo");
         L1.addActionListener(new java.awt.event.ActionListener() {
@@ -333,7 +333,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L1ActionPerformed(evt);
             }
         });
-        jPanel1.add(L1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 376, -1, -1));
+        jPanel1.add(L1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
 
         L3.setText("Dislocación del hombro");
         L3.addActionListener(new java.awt.event.ActionListener() {
@@ -341,7 +341,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L3ActionPerformed(evt);
             }
         });
-        jPanel1.add(L3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 436, -1, -1));
+        jPanel1.add(L3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
 
         C5.setText("Diabetes ");
         C5.addActionListener(new java.awt.event.ActionListener() {
@@ -349,7 +349,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 C5ActionPerformed(evt);
             }
         });
-        jPanel1.add(C5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, -1, -1));
+        jPanel1.add(C5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
 
         Lcliente.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         Lcliente.setForeground(new java.awt.Color(0, 0, 0));
@@ -361,7 +361,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
         nomClitxt.setForeground(new java.awt.Color(0, 0, 0));
         nomClitxt.setCaretColor(new java.awt.Color(153, 153, 153));
         nomClitxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(nomClitxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 32, 507, -1));
+        jPanel1.add(nomClitxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 32, 560, -1));
 
         LSexo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LSexo.setForeground(new java.awt.Color(0, 0, 0));
@@ -382,15 +382,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L6ActionPerformed(evt);
             }
         });
-        jPanel1.add(L6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 526, -1, -1));
-
-        L5.setText("Hernia discal ");
-        L5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                L5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(L5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 496, -1, -1));
+        jPanel1.add(L6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
 
         L2.setText("Tendinitis rotuliana");
         L2.addActionListener(new java.awt.event.ActionListener() {
@@ -398,7 +390,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L2ActionPerformed(evt);
             }
         });
-        jPanel1.add(L2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 406, -1, -1));
+        jPanel1.add(L2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, -1, -1));
 
         L7.setText("Fractura de clavícula ");
         L7.addActionListener(new java.awt.event.ActionListener() {
@@ -406,7 +398,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L7ActionPerformed(evt);
             }
         });
-        jPanel1.add(L7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, -1, -1));
+        jPanel1.add(L7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, -1, -1));
 
         L8.setText("Distensión muscular del cuello");
         L8.addActionListener(new java.awt.event.ActionListener() {
@@ -414,7 +406,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L8ActionPerformed(evt);
             }
         });
-        jPanel1.add(L8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, -1, -1));
+        jPanel1.add(L8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, -1, -1));
 
         L4.setText("Desgarro del tendón de Aquiles");
         L4.addActionListener(new java.awt.event.ActionListener() {
@@ -422,7 +414,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L4ActionPerformed(evt);
             }
         });
-        jPanel1.add(L4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 466, -1, -1));
+        jPanel1.add(L4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
 
         L10.setText("Ninguno");
         L10.addActionListener(new java.awt.event.ActionListener() {
@@ -430,7 +422,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L10ActionPerformed(evt);
             }
         });
-        jPanel1.add(L10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 88, -1));
+        jPanel1.add(L10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, 88, -1));
 
         C3.setText("Hipertensión");
         C3.addActionListener(new java.awt.event.ActionListener() {
@@ -438,15 +430,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 C3ActionPerformed(evt);
             }
         });
-        jPanel1.add(C3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, -1));
-
-        C4.setText("EPOC");
-        C4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                C4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(C4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, -1, -1));
+        jPanel1.add(C3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, -1, -1));
 
         C6.setText("Ninguno");
         C6.addActionListener(new java.awt.event.ActionListener() {
@@ -454,50 +438,18 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 C6ActionPerformed(evt);
             }
         });
-        jPanel1.add(C6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, -1, -1));
-
-        LF2.setText("Síndrome del túnel carpiano");
-        LF2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LF2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(LF2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, -1, -1));
-
-        LF3.setText("Contractura del músculo trapecio");
-        LF3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LF3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(LF3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 580, -1, -1));
-
-        LF1.setText("Epicondilitis lateral");
-        LF1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LF1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(LF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, -1, -1));
-
-        LF4.setText("Ninguno");
-        LF4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LF4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(LF4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 610, -1, -1));
+        jPanel1.add(C6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, -1, -1));
 
         LObjetivos.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LObjetivos.setForeground(new java.awt.Color(0, 0, 0));
         LObjetivos.setText("Objetivos de fitness");
-        jPanel1.add(LObjetivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 94, -1, -1));
+        jPanel1.add(LObjetivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         Ob1.setText("Perder peso");
-        jPanel1.add(Ob1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 136, -1, -1));
+        jPanel1.add(Ob1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         Ob3.setText("Ganar masa muscular");
-        jPanel1.add(Ob3, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 204, -1, -1));
+        jPanel1.add(Ob3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
         Ob5.setText("Mejorar mi rendimiento deportivo");
         Ob5.addActionListener(new java.awt.event.ActionListener() {
@@ -505,20 +457,22 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 Ob5ActionPerformed(evt);
             }
         });
-        jPanel1.add(Ob5, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 272, -1, -1));
+        jPanel1.add(Ob5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         Ob2.setText("Mejorar mi salud");
-        jPanel1.add(Ob2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 170, 132, -1));
+        jPanel1.add(Ob2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 132, -1));
 
-        Ob6.setText("Mejorar mi resistencia cardiovascular");
-        jPanel1.add(Ob6, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 306, 243, -1));
+        LabelIMC.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.add(LabelIMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, 320, 630));
 
-        Ob4.setText("Aumento de la flexibilidad");
-        jPanel1.add(Ob4, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 238, -1, -1));
+        LLesionesIma.setBackground(new java.awt.Color(255, 255, 255));
+        LLesionesIma.setForeground(new java.awt.Color(255, 255, 255));
+        LLesionesIma.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.add(LLesionesIma, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 480, 220));
 
-        LabelIMC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/1azul.png"))); // NOI18N
-        jPanel1.add(LabelIMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(719, 2, 400, 940));
-        jPanel1.add(LLesionesIma, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 680, 550, 260));
+        completarbtn.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        completarbtn.setText("Guardar");
+        jPanel1.add(completarbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 590, 260, -1));
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -637,17 +591,6 @@ public class entrevista_rutina extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_C2ActionPerformed
 
-    private void L9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L9ActionPerformed
-        // TODO add your handling code here:
-        try {
-
-            ImageIcon imagen = new ImageIcon("src/Image/L9.jpg");
-            LLesionesIma.setIcon(imagen);
-        } catch (Exception e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-    }//GEN-LAST:event_L9ActionPerformed
-
     private void NivelConFisBOXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NivelConFisBOXActionPerformed
 
     }//GEN-LAST:event_NivelConFisBOXActionPerformed
@@ -658,10 +601,12 @@ public class entrevista_rutina extends javax.swing.JFrame {
     }//GEN-LAST:event_NivelConFisBOXKeyPressed
 
     private void L1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L1ActionPerformed
-        // TODO add your handling code here:
+    
         try {
 
-            ImageIcon imagen = new ImageIcon("src/Image/L1.jpg");
+            ImageIcon icon = new ImageIcon("src/Image/L1.jpg");
+             Image images = icon.getImage().getScaledInstance(LLesionesIma.getWidth(), LLesionesIma.getHeight(), Image.SCALE_SMOOTH);
+             ImageIcon imagen = new ImageIcon(images);
             LLesionesIma.setIcon(imagen);
 
         } catch (Exception e) {
@@ -675,7 +620,9 @@ public class entrevista_rutina extends javax.swing.JFrame {
             if (!L3.isSelected()) {
                 //    LLesionesIma.setIcon(null);
             } else {
-                ImageIcon imagen = new ImageIcon("src/Image/L3.jpg");
+                ImageIcon icon = new ImageIcon("src/Image/L3.jpg");
+                 Image images = icon.getImage().getScaledInstance(LLesionesIma.getWidth(), LLesionesIma.getHeight(), Image.SCALE_SMOOTH);
+             ImageIcon imagen = new ImageIcon(images);
                 LLesionesIma.setIcon(imagen);
                 //    System.out.println("L3");
             }
@@ -706,31 +653,23 @@ public class entrevista_rutina extends javax.swing.JFrame {
 
         try {
 
-            ImageIcon imagen = new ImageIcon("src/Image/L6.jpg");
+            ImageIcon icon = new ImageIcon("src/Image/L6.jpg");
+             Image images = icon.getImage().getScaledInstance(LLesionesIma.getWidth(), LLesionesIma.getHeight(), Image.SCALE_SMOOTH);
+             ImageIcon imagen = new ImageIcon(images);
             LLesionesIma.setIcon(imagen);
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
     }//GEN-LAST:event_L6ActionPerformed
 
-    private void L5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L5ActionPerformed
-        // TODO add your handling code here:
-
-        try {
-
-            ImageIcon imagen = new ImageIcon("src/Image/L5.jpg");
-            LLesionesIma.setIcon(imagen);
-        } catch (Exception e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-    }//GEN-LAST:event_L5ActionPerformed
-
     private void L2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L2ActionPerformed
         // TODO add your handling code here:
 
         try {
 
-            ImageIcon imagen = new ImageIcon("src/Image/L2.jpg");
+            ImageIcon icon = new ImageIcon("src/Image/L2.jpg");
+             Image images = icon.getImage().getScaledInstance(LLesionesIma.getWidth(), LLesionesIma.getHeight(), Image.SCALE_SMOOTH);
+             ImageIcon imagen = new ImageIcon(images);
             LLesionesIma.setIcon(imagen);
             //    System.out.println("L2");
 
@@ -744,7 +683,9 @@ public class entrevista_rutina extends javax.swing.JFrame {
 
         try {
 
-            ImageIcon imagen = new ImageIcon("src/Image/L7.jpg");
+            ImageIcon icon = new ImageIcon("src/Image/L7.jpg");
+             Image images = icon.getImage().getScaledInstance(LLesionesIma.getWidth(), LLesionesIma.getHeight(), Image.SCALE_SMOOTH);
+             ImageIcon imagen = new ImageIcon(images);
             LLesionesIma.setIcon(imagen);
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
@@ -756,7 +697,9 @@ public class entrevista_rutina extends javax.swing.JFrame {
 
         try {
 
-            ImageIcon imagen = new ImageIcon("src/Image/L8.jpg");
+            ImageIcon icon = new ImageIcon("src/Image/L8.jpg");
+            Image images = icon.getImage().getScaledInstance(LLesionesIma.getWidth(), LLesionesIma.getHeight(), Image.SCALE_SMOOTH);
+             ImageIcon imagen = new ImageIcon(images);
             LLesionesIma.setIcon(imagen);
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
@@ -767,7 +710,10 @@ public class entrevista_rutina extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
 
-            ImageIcon imagen = new ImageIcon("src/Image/L4.jpg");
+            ImageIcon icon = new ImageIcon("src/Image/L4.jpg");
+             Image images = icon.getImage().getScaledInstance(LLesionesIma.getWidth(), LLesionesIma.getHeight(), Image.SCALE_SMOOTH);
+             ImageIcon imagen = new ImageIcon(images);
+            
             LLesionesIma.setIcon(imagen);
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
@@ -787,15 +733,12 @@ public class entrevista_rutina extends javax.swing.JFrame {
 
         L4.setSelected(false);
 
-        L5.setSelected(false);
-
         L6.setSelected(false);
 
         L7.setSelected(false);
 
         L8.setSelected(false);
 
-        L9.setSelected(false);
 
     }//GEN-LAST:event_L10ActionPerformed
 
@@ -816,79 +759,19 @@ public class entrevista_rutina extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_C3ActionPerformed
 
-    private void C4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C4ActionPerformed
-        // TODO add your handling code here:
-        try {
-
-            ImageIcon icon = new ImageIcon("src/Image/C4.jpg"); // Cambia la ruta por la de tu imagen
-            // Escalar la imagen al tamaño del JLabel
-            Image images = icon.getImage().getScaledInstance(LLesionesIma.getWidth(), LLesionesIma.getHeight(), Image.SCALE_SMOOTH);
-
-            // Crear un ImageIcon con la imagen escalada
-            ImageIcon imagen = new ImageIcon(images);
-            LLesionesIma.setIcon(imagen);
-        } catch (Exception e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-    }//GEN-LAST:event_C4ActionPerformed
-
     private void C6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C6ActionPerformed
         // TODO add your handling code here:
         LLesionesIma.setIcon(null);
         C1.setSelected(false);
         C2.setSelected(false);
         C3.setSelected(false);
-        C4.setSelected(false);
         C5.setSelected(false);
         C1.enable(false);
         C2.enable(false);
         C3.enable(false);
-        C4.enable(false);
         C5.enable(false);
 
     }//GEN-LAST:event_C6ActionPerformed
-
-    private void LF2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LF2ActionPerformed
-        // TODO add your handling code here:
-        try {
-
-            ImageIcon imagen = new ImageIcon("src/Image/LF2.jpg");
-            LLesionesIma.setIcon(imagen);
-        } catch (Exception e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-    }//GEN-LAST:event_LF2ActionPerformed
-
-    private void LF3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LF3ActionPerformed
-        // TODO add your handling code here:
-        try {
-
-            ImageIcon imagen = new ImageIcon("src/Image/LF3.jpg");
-            LLesionesIma.setIcon(imagen);
-        } catch (Exception e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-    }//GEN-LAST:event_LF3ActionPerformed
-
-    private void LF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LF1ActionPerformed
-        // TODO add your handling code here:
-        try {
-
-            ImageIcon imagen = new ImageIcon("src/Image/LF1.jpg");
-            LLesionesIma.setIcon(imagen);
-        } catch (Exception e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-    }//GEN-LAST:event_LF1ActionPerformed
-
-    private void LF4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LF4ActionPerformed
-        // TODO add your handling code here:
-        LLesionesIma.setIcon(null);
-        LF1.setSelected(false);
-        LF2.setSelected(false);
-        LF3.setSelected(false);
-
-    }//GEN-LAST:event_LF4ActionPerformed
 
     private void Ob5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ob5ActionPerformed
         // TODO add your handling code here:
@@ -933,7 +816,6 @@ public class entrevista_rutina extends javax.swing.JFrame {
     private javax.swing.JCheckBox C1;
     private javax.swing.JCheckBox C2;
     private javax.swing.JCheckBox C3;
-    private javax.swing.JCheckBox C4;
     private javax.swing.JCheckBox C5;
     private javax.swing.JCheckBox C6;
     private javax.swing.JCheckBox L1;
@@ -941,22 +823,15 @@ public class entrevista_rutina extends javax.swing.JFrame {
     private javax.swing.JCheckBox L2;
     private javax.swing.JCheckBox L3;
     private javax.swing.JCheckBox L4;
-    private javax.swing.JCheckBox L5;
     private javax.swing.JCheckBox L6;
     private javax.swing.JCheckBox L7;
     private javax.swing.JCheckBox L8;
-    private javax.swing.JCheckBox L9;
     private javax.swing.JLabel LAltura;
     private javax.swing.JLabel LCondiciones;
     private javax.swing.JLabel LEdad;
-    private javax.swing.JCheckBox LF1;
-    private javax.swing.JCheckBox LF2;
-    private javax.swing.JCheckBox LF3;
-    private javax.swing.JCheckBox LF4;
     private javax.swing.JLabel LIMC;
     private javax.swing.JLabel LLesiones;
     private javax.swing.JLabel LLesionesIma;
-    private javax.swing.JLabel LLimitaciones;
     private javax.swing.JLabel LNivel;
     private javax.swing.JLabel LObjetivos;
     private javax.swing.JLabel LPeso;
@@ -967,10 +842,9 @@ public class entrevista_rutina extends javax.swing.JFrame {
     private javax.swing.JRadioButton Ob1;
     private javax.swing.JRadioButton Ob2;
     private javax.swing.JRadioButton Ob3;
-    private javax.swing.JRadioButton Ob4;
     private javax.swing.JRadioButton Ob5;
-    private javax.swing.JRadioButton Ob6;
     private javax.swing.JTextField alturatxt;
+    private javax.swing.JButton completarbtn;
     private javax.swing.JTextField edadtxt;
     private javax.swing.JTextField fechatxt;
     private javax.swing.JTextField imctxt;
