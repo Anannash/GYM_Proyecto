@@ -6,8 +6,14 @@ package gym_app;
 
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.Image;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.text.DecimalFormat;
+import javax.swing.ButtonGroup;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.Document;
@@ -21,10 +27,22 @@ public class entrevista_rutina extends javax.swing.JFrame {
     /**
      * Creates new form entrevista_rutinasss
      */
+    
+    private String objetivos;
+    private String lesiones;
+    private String condiciones;
+    private String nivel;
+    
     public entrevista_rutina() {
+     setUndecorated(true);
         initComponents();
-        setExtendedState(MAXIMIZED_BOTH);
-
+    //    setExtendedState(MAXIMIZED_BOTH);
+        this.setLocationRelativeTo(this);
+        SetImageButton("src/Image/X.png", Salirbtn);
+        SetImageButton("src/Image/regresar.png", Regresarbtn);
+    
+        
+      
         /*IMAGENES*/
         Document doc = imctxt.getDocument();
         doc.addDocumentListener(new DocumentListener() {
@@ -108,6 +126,8 @@ public class entrevista_rutina extends javax.swing.JFrame {
 
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -117,12 +137,9 @@ public class entrevista_rutina extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        fechatxt = new javax.swing.JTextField();
-        noControltxt = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         LPeso = new javax.swing.JLabel();
         LAltura = new javax.swing.JLabel();
         LIMC = new javax.swing.JLabel();
@@ -160,83 +177,42 @@ public class entrevista_rutina extends javax.swing.JFrame {
         LabelIMC = new javax.swing.JLabel();
         LLesionesIma = new javax.swing.JLabel();
         completarbtn = new javax.swing.JButton();
+        Salirbtn = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        Regresarbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Entrevista ");
-
-        fechatxt.setEditable(false);
-        fechatxt.setBackground(new java.awt.Color(204, 204, 204));
-        fechatxt.setForeground(new java.awt.Color(0, 0, 0));
-        fechatxt.setText("09/10/2024");
-        fechatxt.setCaretColor(new java.awt.Color(153, 153, 153));
-        fechatxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        noControltxt.setEditable(false);
-        noControltxt.setBackground(new java.awt.Color(204, 204, 204));
-        noControltxt.setForeground(new java.awt.Color(0, 0, 0));
-        noControltxt.setText("21550747");
-        noControltxt.setCaretColor(new java.awt.Color(153, 153, 153));
-        noControltxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(noControltxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(fechatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fechatxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(noControltxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-        );
-
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
         jPanel1.setBackground(new java.awt.Color(244, 238, 238));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel6.setFont(new java.awt.Font("Eras Demi ITC", 0, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 145, 77));
+        jLabel6.setText("Diseña tu Plan de Ejercicio");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 460, -1));
+
         LPeso.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LPeso.setForeground(new java.awt.Color(0, 0, 0));
         LPeso.setText("Peso:");
-        jPanel1.add(LPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 62, -1, -1));
+        jPanel1.add(LPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
 
         LAltura.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LAltura.setForeground(new java.awt.Color(0, 0, 0));
         LAltura.setText("Altura:");
-        jPanel1.add(LAltura, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 62, -1, -1));
+        jPanel1.add(LAltura, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, -1, -1));
 
         LIMC.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LIMC.setForeground(new java.awt.Color(0, 0, 0));
         LIMC.setText("IMC:");
-        jPanel1.add(LIMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 62, -1, -1));
+        jPanel1.add(LIMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, -1, -1));
 
         pesotxt.setText("0");
-        jPanel1.add(pesotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 64, 80, -1));
+        jPanel1.add(pesotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 80, -1));
 
         alturatxt.setText("0");
         alturatxt.addActionListener(new java.awt.event.ActionListener() {
@@ -249,8 +225,9 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 alturatxtKeyReleased(evt);
             }
         });
-        jPanel1.add(alturatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(511, 64, 80, -1));
+        jPanel1.add(alturatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 80, -1));
 
+        imctxt.setEditable(false);
         imctxt.setBackground(new java.awt.Color(204, 204, 204));
         imctxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         imctxt.addActionListener(new java.awt.event.ActionListener() {
@@ -269,29 +246,29 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 imctxtKeyTyped(evt);
             }
         });
-        jPanel1.add(imctxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(655, 64, 56, -1));
+        jPanel1.add(imctxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, 56, -1));
 
         LEdad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LEdad.setForeground(new java.awt.Color(0, 0, 0));
         LEdad.setText("Edad:");
-        jPanel1.add(LEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 62, -1, -1));
+        jPanel1.add(LEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
 
         edadtxt.setEditable(false);
         edadtxt.setBackground(new java.awt.Color(204, 204, 204));
         edadtxt.setForeground(new java.awt.Color(0, 0, 0));
         edadtxt.setCaretColor(new java.awt.Color(153, 153, 153));
         edadtxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(edadtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 64, 38, -1));
+        jPanel1.add(edadtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 38, -1));
 
         LCondiciones.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LCondiciones.setForeground(new java.awt.Color(0, 0, 0));
         LCondiciones.setText("Condiciones médicas crónicas");
-        jPanel1.add(LCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 270, 30));
+        jPanel1.add(LCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 270, 30));
 
         LNivel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LNivel.setForeground(new java.awt.Color(0, 0, 0));
         LNivel.setText("Nivel de condicion fisica:");
-        jPanel1.add(LNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        jPanel1.add(LNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         C1.setText("Asma");
         C1.addActionListener(new java.awt.event.ActionListener() {
@@ -299,7 +276,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 C1ActionPerformed(evt);
             }
         });
-        jPanel1.add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+        jPanel1.add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
 
         C2.setText("Artritis");
         C2.addActionListener(new java.awt.event.ActionListener() {
@@ -307,7 +284,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 C2ActionPerformed(evt);
             }
         });
-        jPanel1.add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
+        jPanel1.add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, -1, -1));
 
         NivelConFisBOX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Principiante", "Intermedio", "Avanzado" }));
         NivelConFisBOX.addActionListener(new java.awt.event.ActionListener() {
@@ -320,12 +297,12 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 NivelConFisBOXKeyPressed(evt);
             }
         });
-        jPanel1.add(NivelConFisBOX, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 120, 30));
+        jPanel1.add(NivelConFisBOX, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 120, 30));
 
         LLesiones.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LLesiones.setForeground(new java.awt.Color(0, 0, 0));
         LLesiones.setText("Lesiones previas");
-        jPanel1.add(LLesiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
+        jPanel1.add(LLesiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
 
         L1.setText("Esguince de tobillo");
         L1.addActionListener(new java.awt.event.ActionListener() {
@@ -333,7 +310,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L1ActionPerformed(evt);
             }
         });
-        jPanel1.add(L1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
+        jPanel1.add(L1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
 
         L3.setText("Dislocación del hombro");
         L3.addActionListener(new java.awt.event.ActionListener() {
@@ -341,7 +318,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L3ActionPerformed(evt);
             }
         });
-        jPanel1.add(L3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
+        jPanel1.add(L3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, -1));
 
         C5.setText("Diabetes ");
         C5.addActionListener(new java.awt.event.ActionListener() {
@@ -349,32 +326,31 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 C5ActionPerformed(evt);
             }
         });
-        jPanel1.add(C5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
+        jPanel1.add(C5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, -1, -1));
 
         Lcliente.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         Lcliente.setForeground(new java.awt.Color(0, 0, 0));
         Lcliente.setText("Nombre del cliente:");
-        jPanel1.add(Lcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 32, -1, -1));
+        jPanel1.add(Lcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         nomClitxt.setEditable(false);
         nomClitxt.setBackground(new java.awt.Color(204, 204, 204));
         nomClitxt.setForeground(new java.awt.Color(0, 0, 0));
         nomClitxt.setCaretColor(new java.awt.Color(153, 153, 153));
         nomClitxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(nomClitxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 32, 560, -1));
+        jPanel1.add(nomClitxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 560, -1));
 
         LSexo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LSexo.setForeground(new java.awt.Color(0, 0, 0));
         LSexo.setText("Sexo:");
-        jPanel1.add(LSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 62, -1, -1));
+        jPanel1.add(LSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         sexotxt.setEditable(false);
         sexotxt.setBackground(new java.awt.Color(204, 204, 204));
         sexotxt.setForeground(new java.awt.Color(0, 0, 0));
-        sexotxt.setText("M");
         sexotxt.setCaretColor(new java.awt.Color(153, 153, 153));
         sexotxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(sexotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 64, 38, -1));
+        jPanel1.add(sexotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 38, -1));
 
         L6.setText("Fractura de muñeca");
         L6.addActionListener(new java.awt.event.ActionListener() {
@@ -382,7 +358,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L6ActionPerformed(evt);
             }
         });
-        jPanel1.add(L6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
+        jPanel1.add(L6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
 
         L2.setText("Tendinitis rotuliana");
         L2.addActionListener(new java.awt.event.ActionListener() {
@@ -390,7 +366,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L2ActionPerformed(evt);
             }
         });
-        jPanel1.add(L2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, -1, -1));
+        jPanel1.add(L2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
 
         L7.setText("Fractura de clavícula ");
         L7.addActionListener(new java.awt.event.ActionListener() {
@@ -398,7 +374,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L7ActionPerformed(evt);
             }
         });
-        jPanel1.add(L7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, -1, -1));
+        jPanel1.add(L7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, -1, -1));
 
         L8.setText("Distensión muscular del cuello");
         L8.addActionListener(new java.awt.event.ActionListener() {
@@ -406,7 +382,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L8ActionPerformed(evt);
             }
         });
-        jPanel1.add(L8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, -1, -1));
+        jPanel1.add(L8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
 
         L4.setText("Desgarro del tendón de Aquiles");
         L4.addActionListener(new java.awt.event.ActionListener() {
@@ -414,7 +390,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L4ActionPerformed(evt);
             }
         });
-        jPanel1.add(L4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+        jPanel1.add(L4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, -1, -1));
 
         L10.setText("Ninguno");
         L10.addActionListener(new java.awt.event.ActionListener() {
@@ -422,7 +398,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 L10ActionPerformed(evt);
             }
         });
-        jPanel1.add(L10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, 88, -1));
+        jPanel1.add(L10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 88, -1));
 
         C3.setText("Hipertensión");
         C3.addActionListener(new java.awt.event.ActionListener() {
@@ -430,7 +406,7 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 C3ActionPerformed(evt);
             }
         });
-        jPanel1.add(C3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, -1, -1));
+        jPanel1.add(C3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, -1, -1));
 
         C6.setText("Ninguno");
         C6.addActionListener(new java.awt.event.ActionListener() {
@@ -438,18 +414,28 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 C6ActionPerformed(evt);
             }
         });
-        jPanel1.add(C6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, -1, -1));
+        jPanel1.add(C6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, -1, -1));
 
         LObjetivos.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LObjetivos.setForeground(new java.awt.Color(0, 0, 0));
         LObjetivos.setText("Objetivos de fitness");
-        jPanel1.add(LObjetivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+        jPanel1.add(LObjetivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
         Ob1.setText("Perder peso");
-        jPanel1.add(Ob1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        Ob1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ob1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Ob1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         Ob3.setText("Ganar masa muscular");
-        jPanel1.add(Ob3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        Ob3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ob3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Ob3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         Ob5.setText("Mejorar mi rendimiento deportivo");
         Ob5.addActionListener(new java.awt.event.ActionListener() {
@@ -457,22 +443,55 @@ public class entrevista_rutina extends javax.swing.JFrame {
                 Ob5ActionPerformed(evt);
             }
         });
-        jPanel1.add(Ob5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+        jPanel1.add(Ob5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
 
         Ob2.setText("Mejorar mi salud");
-        jPanel1.add(Ob2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 132, -1));
+        Ob2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ob2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Ob2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 132, -1));
 
         LabelIMC.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(LabelIMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, 320, 630));
+        jPanel1.add(LabelIMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, 330, 670));
 
         LLesionesIma.setBackground(new java.awt.Color(255, 255, 255));
         LLesionesIma.setForeground(new java.awt.Color(255, 255, 255));
         LLesionesIma.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(LLesionesIma, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 480, 220));
+        jPanel1.add(LLesionesIma, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 480, 220));
 
         completarbtn.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         completarbtn.setText("Guardar");
-        jPanel1.add(completarbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 590, 260, -1));
+        jPanel1.add(completarbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 620, 260, -1));
+
+        Salirbtn.setBackground(new java.awt.Color(193, 86, 14));
+        Salirbtn.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
+        Salirbtn.setForeground(new java.awt.Color(255, 255, 255));
+        Salirbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Salirbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirbtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Salirbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 50, 50));
+
+        jLabel7.setFont(new java.awt.Font("Eras Demi ITC", 0, 36)); // NOI18N
+        jLabel7.setText("Generador de Rutinas:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 680, -1));
+
+        Regresarbtn.setBackground(new java.awt.Color(193, 86, 14));
+        Regresarbtn.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
+        Regresarbtn.setForeground(new java.awt.Color(255, 255, 255));
+        Regresarbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Regresarbtn.setMaximumSize(new java.awt.Dimension(10, 8));
+        Regresarbtn.setMinimumSize(new java.awt.Dimension(10, 8));
+        Regresarbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegresarbtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Regresarbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 40, 40));
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -480,16 +499,11 @@ public class entrevista_rutina extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1126, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1123, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
         );
 
         pack();
@@ -573,6 +587,15 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+        
+        if (C1.isSelected()){
+            C2.setSelected(false);
+             C3.setSelected(false);
+              C5.setSelected(false);
+               C6.setSelected(false);
+        }
+        
+         condiciones=C1.getText(); 
     }//GEN-LAST:event_C1ActionPerformed
 
     private void C2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C2ActionPerformed
@@ -589,10 +612,19 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+         if (C2.isSelected()){
+            C1.setSelected(false);
+             C3.setSelected(false);
+              C5.setSelected(false);
+               C6.setSelected(false);
+        }
+         condiciones=C2.getText(); 
     }//GEN-LAST:event_C2ActionPerformed
 
     private void NivelConFisBOXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NivelConFisBOXActionPerformed
 
+        nivel = (String) NivelConFisBOX.getSelectedItem() ;
+        
     }//GEN-LAST:event_NivelConFisBOXActionPerformed
 
     private void NivelConFisBOXKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NivelConFisBOXKeyPressed
@@ -612,6 +644,18 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+        if (L1.isSelected()){
+            L2.setSelected(false);
+            L3.setSelected(false);
+            L4.setSelected(false);
+            L6.setSelected(false);
+            L7.setSelected(false);
+            L8.setSelected(false);
+             L10.setSelected(false);
+        }
+        
+        lesiones=L1.getText(); 
+        
     }//GEN-LAST:event_L1ActionPerformed
 
     private void L3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L3ActionPerformed
@@ -630,6 +674,17 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+         if (L3.isSelected()){
+            L2.setSelected(false);
+            L8.setSelected(false);
+            L4.setSelected(false);
+            L1.setSelected(false);
+            L7.setSelected(false);
+            L6.setSelected(false);
+             L10.setSelected(false);
+        }
+         
+          lesiones=L3.getText(); 
     }//GEN-LAST:event_L3ActionPerformed
 
     private void C5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C5ActionPerformed
@@ -646,6 +701,14 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+        if (C5.isSelected()){
+            C2.setSelected(false);
+             C3.setSelected(false);
+              C1.setSelected(false);
+               C6.setSelected(false);
+        }
+        condiciones=C5.getText(); 
+        
     }//GEN-LAST:event_C5ActionPerformed
 
     private void L6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L6ActionPerformed
@@ -660,6 +723,16 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+         if (L6.isSelected()){
+            L2.setSelected(false);
+            L3.setSelected(false);
+            L4.setSelected(false);
+            L1.setSelected(false);
+            L7.setSelected(false);
+            L8.setSelected(false);
+             L10.setSelected(false);
+        }
+          lesiones=L6.getText(); 
     }//GEN-LAST:event_L6ActionPerformed
 
     private void L2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L2ActionPerformed
@@ -676,6 +749,16 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+         if (L2.isSelected()){
+            L8.setSelected(false);
+            L3.setSelected(false);
+            L4.setSelected(false);
+            L1.setSelected(false);
+            L7.setSelected(false);
+            L6.setSelected(false);
+             L10.setSelected(false);
+        }
+          lesiones=L2.getText(); 
     }//GEN-LAST:event_L2ActionPerformed
 
     private void L7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L7ActionPerformed
@@ -690,6 +773,16 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+         if (L7.isSelected()){
+            L2.setSelected(false);
+            L3.setSelected(false);
+            L4.setSelected(false);
+            L1.setSelected(false);
+            L8.setSelected(false);
+            L6.setSelected(false);
+             L10.setSelected(false);
+        }
+          lesiones=L7.getText(); 
     }//GEN-LAST:event_L7ActionPerformed
 
     private void L8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L8ActionPerformed
@@ -704,6 +797,17 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+        
+        if (L8.isSelected()){
+            L2.setSelected(false);
+            L3.setSelected(false);
+            L4.setSelected(false);
+            L1.setSelected(false);
+            L7.setSelected(false);
+             L10.setSelected(false);
+            L6.setSelected(false);
+        }
+         lesiones=L8.getText(); 
     }//GEN-LAST:event_L8ActionPerformed
 
     private void L4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L4ActionPerformed
@@ -718,33 +822,40 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
-
+         if (L4.isSelected()){
+            L2.setSelected(false);
+            L3.setSelected(false);
+            L8.setSelected(false);
+            L1.setSelected(false);
+            L7.setSelected(false);
+            L6.setSelected(false);
+             L10.setSelected(false);
+        }
+          lesiones=L4.getText(); 
     }//GEN-LAST:event_L4ActionPerformed
 
     private void L10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L10ActionPerformed
         // TODO add your handling code here:
         LLesionesIma.setIcon(null);
 
-        L1.setSelected(false);
-
-        L2.setSelected(false);
-
-        L3.setSelected(false);
-
-        L4.setSelected(false);
-
-        L6.setSelected(false);
-
-        L7.setSelected(false);
-
-        L8.setSelected(false);
+         if (L10.isSelected()){
+            L2.setSelected(false);
+            L3.setSelected(false);
+            L4.setSelected(false);
+            L1.setSelected(false);
+            L7.setSelected(false);
+            L6.setSelected(false);
+            L8.setSelected(false);
+             L10.setSelected(false);
+        }
+          lesiones=L10.getText(); 
 
 
     }//GEN-LAST:event_L10ActionPerformed
 
     private void C3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C3ActionPerformed
         // TODO add your handling code here:
-        C3.enable();
+      
         try {
 
             ImageIcon icon = new ImageIcon("src/Image/C3.png"); // Cambia la ruta por la de tu imagen
@@ -757,25 +868,122 @@ public class entrevista_rutina extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+        if (C3.isSelected()){
+            C2.setSelected(false);
+             C1.setSelected(false);
+              C5.setSelected(false);
+               C6.setSelected(false);
+        }
+        condiciones=C3.getText(); 
     }//GEN-LAST:event_C3ActionPerformed
 
     private void C6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C6ActionPerformed
         // TODO add your handling code here:
         LLesionesIma.setIcon(null);
-        C1.setSelected(false);
-        C2.setSelected(false);
-        C3.setSelected(false);
-        C5.setSelected(false);
-        C1.enable(false);
-        C2.enable(false);
-        C3.enable(false);
-        C5.enable(false);
+       if (C6.isSelected()){
+            C2.setSelected(false);
+             C1.setSelected(false);
+              C5.setSelected(false);
+               C3.setSelected(false);
+        }
+       condiciones=C6.getText(); 
+       
 
     }//GEN-LAST:event_C6ActionPerformed
 
     private void Ob5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ob5ActionPerformed
         // TODO add your handling code here:
+        
+            if (Ob5.isSelected()) {
+                Ob2.setSelected(false);
+                Ob3.setSelected(false);
+                Ob1.setSelected(false);
+            }
+             objetivos= Ob5.getText();
+            
     }//GEN-LAST:event_Ob5ActionPerformed
+
+    private void Ob1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ob1ActionPerformed
+        // TODO add your handling code here:
+       
+            if (Ob1.isSelected()) {
+                Ob2.setSelected(false);
+                Ob3.setSelected(false);
+                Ob5.setSelected(false);
+            }
+            
+            objetivos= Ob1.getText();
+          
+  
+         
+    }//GEN-LAST:event_Ob1ActionPerformed
+
+    private void Ob2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ob2ActionPerformed
+        // TODO add your handling code here:
+        
+        
+            if (Ob2.isSelected()) {
+                Ob1.setSelected(false);
+                Ob3.setSelected(false);
+                Ob5.setSelected(false);
+            }
+            objetivos= Ob2.getText();
+    }//GEN-LAST:event_Ob2ActionPerformed
+
+    private void Ob3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ob3ActionPerformed
+        // TODO add your handling code here:
+      
+            if (Ob3.isSelected()) {
+                Ob2.setSelected(false);
+                Ob1.setSelected(false);
+                Ob5.setSelected(false);
+            }
+            objetivos= Ob3.getText();
+                        
+    }//GEN-LAST:event_Ob3ActionPerformed
+
+      private void SetImageButton(String url, JButton boton) {
+        ImageIcon image = new ImageIcon(url);
+        Icon icon = new ImageIcon(image.getImage().getScaledInstance(boton.getWidth(), boton.getHeight(), Image.SCALE_SMOOTH));
+        boton.setIcon(icon);
+
+        boton.setBorderPainted(false);
+        boton.setContentAreaFilled(false);
+        boton.setFocusPainted(false);
+        boton.setOpaque(false);
+        this.repaint();
+    }
+
+    private void SalirbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirbtnActionPerformed
+        // 0 Aceptar
+        //2 cancelar
+       
+        
+       int R= JOptionPane.showConfirmDialog(null, "Estas Seguro de finalizarlo, sin antes guardar?","Salir", JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+       
+      if (R==0){
+            System.exit(0);
+       }
+       
+        
+       
+        
+        
+    }//GEN-LAST:event_SalirbtnActionPerformed
+
+    private void RegresarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarbtnActionPerformed
+        // TODO add your handling code here:
+        
+         int R= JOptionPane.showConfirmDialog(null, "Estas Seguro de regresar, sin antes guardar?","Regresar", JOptionPane.YES_NO_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+       
+      if (R==0){
+           Perfil_Segi Perfil = new Perfil_Segi();
+           Perfil.setVisible(true);
+           this.setVisible(false);
+       }
+    }//GEN-LAST:event_RegresarbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -843,16 +1051,16 @@ public class entrevista_rutina extends javax.swing.JFrame {
     private javax.swing.JRadioButton Ob2;
     private javax.swing.JRadioButton Ob3;
     private javax.swing.JRadioButton Ob5;
+    private javax.swing.JButton Regresarbtn;
+    private javax.swing.JButton Salirbtn;
     private javax.swing.JTextField alturatxt;
     private javax.swing.JButton completarbtn;
     private javax.swing.JTextField edadtxt;
-    private javax.swing.JTextField fechatxt;
     private javax.swing.JTextField imctxt;
-    public javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField noControltxt;
     private javax.swing.JTextField nomClitxt;
     private javax.swing.JTextField pesotxt;
     private javax.swing.JTextField sexotxt;
