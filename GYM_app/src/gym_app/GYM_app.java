@@ -119,5 +119,32 @@ public class GYM_app {
             }
          return datos_h;
 } 
+     
+     public String leer_producto (String datoh,String producto){
+            String rutaProyecto = System.getProperty("user.dir");
+         String archivo= rutaProyecto+"\\src\\Doc\\"+datoh+".txt"; 
+         GYM_app g = new GYM_app();
+         String datos_p="";  
+         try{
+            FileReader fr = new FileReader(archivo);
+            BufferedReader br = new BufferedReader(fr);
+            
+            String lineas;
+            
+            int n=0;
+           
+               while ((lineas = br.readLine()) != null) {
+                // Procesar la línea (en este ejemplo, simplemente imprimirla)
+                System.out.println(lineas);
+                       if(lineas.contains(producto)){                           
+                           datos_p=datos_p+lineas+"\n"; 
+                       }}
+            br.close();
+            fr.close();       
+            }catch(Exception e){
+                System.out.println("Error: "+e.getMessage());
+            }
+         return datos_p;
+} 
     
 }

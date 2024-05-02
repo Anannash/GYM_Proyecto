@@ -127,7 +127,7 @@ public class compraprod extends javax.swing.JFrame {
         totaltxt = new javax.swing.JTextField();
         añadirbtn = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        compra = new javax.swing.JTextArea();
+        compratxt = new javax.swing.JTextArea();
         Lcliente1 = new javax.swing.JLabel();
         Lcliente4 = new javax.swing.JLabel();
         Lcliente5 = new javax.swing.JLabel();
@@ -209,7 +209,6 @@ public class compraprod extends javax.swing.JFrame {
         Lcliente2.setText("Artículo a comprar");
         jPanel1.add(Lcliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, -1, -1));
 
-        arttxt.setEditable(false);
         arttxt.setBackground(new java.awt.Color(204, 204, 204));
         arttxt.setCaretColor(new java.awt.Color(153, 153, 153));
         arttxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -227,7 +226,6 @@ public class compraprod extends javax.swing.JFrame {
 
         articulosarea.setColumns(20);
         articulosarea.setRows(5);
-        articulosarea.setText("Rodilleras MX XL - 2232\nRodilleras MX S - 2254\nRodilleras Adidas M - 3105\nRodilleras Adidas L - 3120\nProtección para rodillas NRL - 9301\nProtección para rodillas NRL S - 9345\nRodilleras sintéticas BBM L - 8602\nRodilleras sintéticas BBM S - 8603\nRodilleras tela esp BBM XL - 8665\nRodilleras tela esp BBM L - 8666\nRodilleras tela esp BBM M - 8667\n");
         jScrollPane2.setViewportView(articulosarea);
 
         totaltxt.setEditable(false);
@@ -244,10 +242,10 @@ public class compraprod extends javax.swing.JFrame {
             }
         });
 
-        compra.setColumns(20);
-        compra.setRows(5);
-        compra.setText("2232\t10\t\t450.23 \t\t$4,502.30\n8665\t5\t\t320.50\t\t$1602.50");
-        jScrollPane3.setViewportView(compra);
+        compratxt.setColumns(20);
+        compratxt.setRows(5);
+        compratxt.setText("2232\t10\t\t450.23 \t\t$4,502.30\n8665\t5\t\t320.50\t\t$1602.50");
+        jScrollPane3.setViewportView(compratxt);
 
         Lcliente1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         Lcliente1.setText("id articulo");
@@ -261,7 +259,6 @@ public class compraprod extends javax.swing.JFrame {
         Lcliente6.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         Lcliente6.setText("Total de articulo");
 
-        articuloctxt.setEditable(false);
         articuloctxt.setBackground(new java.awt.Color(204, 204, 204));
         articuloctxt.setCaretColor(new java.awt.Color(153, 153, 153));
         articuloctxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -290,7 +287,7 @@ public class compraprod extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,15 +304,12 @@ public class compraprod extends javax.swing.JFrame {
                             .addComponent(Lcliente3)
                             .addComponent(confirmarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(articuloctxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(añadirbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                    .addContainerGap(351, Short.MAX_VALUE)
-                    .addComponent(articuloctxt, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(236, 236, 236)))
+                        .addGap(26, 26, 26))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,18 +317,18 @@ public class compraprod extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(articuloctxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(añadirbtn))
+                        .addGap(11, 11, 11)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Lcliente4)
+                                .addComponent(Lcliente5)
+                                .addComponent(Lcliente6))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(Lcliente1))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(añadirbtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Lcliente4)
-                                    .addComponent(Lcliente5)
-                                    .addComponent(Lcliente6))))
+                                .addGap(18, 18, 18)
+                                .addComponent(Lcliente1)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -345,16 +339,10 @@ public class compraprod extends javax.swing.JFrame {
                         .addComponent(confirmarbtn))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(23, 23, 23)
-                    .addComponent(articuloctxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(445, Short.MAX_VALUE)))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 780, 490));
 
-        provtxt.setEditable(false);
         provtxt.setBackground(new java.awt.Color(204, 204, 204));
         provtxt.setCaretColor(new java.awt.Color(153, 153, 153));
         provtxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -399,15 +387,30 @@ public class compraprod extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void añadirbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirbtnActionPerformed
-        // TODO add your handling code here:
+        String prod = articuloctxt.getText();
+        String articulo = arttxt.getText();
+        
+        GYM_app g = new GYM_app();
+        String datos_e =""; 
+        datos_e = datos_e + g.leer_producto(articulo,prod);
+        compratxt.setText(datos_e);
     }//GEN-LAST:event_añadirbtnActionPerformed
 
     private void buscartbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscartbtnActionPerformed
-        // TODO add your handling code here:
+        String articulo = arttxt.getText(); 
+         GYM_app g = new GYM_app();
+        String datos_e = g.leer(articulo);
+        
+        articulosarea.setText(datos_e);
+       
     }//GEN-LAST:event_buscartbtnActionPerformed
 
     private void buscarprovbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarprovbtnActionPerformed
-        // TODO add your handling code here:
+         String proveedor = provtxt.getText();
+         GYM_app g = new GYM_app();
+        String datos_e = g.leer(proveedor);
+        
+        articulosarea.setText(datos_e);
     }//GEN-LAST:event_buscarprovbtnActionPerformed
 
     private void confirmarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarbtnActionPerformed
@@ -449,16 +452,17 @@ public class compraprod extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                /*try {
-                    new entrevista_rutina().setVisible(true);
+                try {
+                    new compraprod().setVisible(true);
                 } catch (FontFormatException ex) {
-                    Logger.getLogger(entrevista_rutina.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(compraprod.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
-                    Logger.getLogger(entrevista_rutina.class.getName()).log(Level.SEVERE, null, ex);
-                }*/
+                    Logger.getLogger(compraprod.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Lcliente;
@@ -475,7 +479,7 @@ public class compraprod extends javax.swing.JFrame {
     private javax.swing.JButton añadirbtn;
     private javax.swing.JButton buscarprovbtn;
     private javax.swing.JButton buscartbtn;
-    private javax.swing.JTextArea compra;
+    private javax.swing.JTextArea compratxt;
     private javax.swing.JButton confirmarbtn;
     private javax.swing.JTextField fechatxt;
     public javax.swing.JLabel jLabel1;

@@ -40,6 +40,7 @@ public class Horarios extends javax.swing.JFrame {
         initComponents();     
         panelh1.setVisible(false);
         panelh2.setVisible(false);
+        this.setLocationRelativeTo(this);
         
 
         
@@ -149,6 +150,9 @@ public class Horarios extends javax.swing.JFrame {
         setBackground(new java.awt.Color(244, 246, 248));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setExtendedState(MAXIMIZED_BOTH);
+        setLocationByPlatform(true);
+        setMaximizedBounds(new java.awt.Rectangle(600, 590, 590, 590));
+        setMaximumSize(new java.awt.Dimension(600, 590));
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -203,6 +207,7 @@ public class Horarios extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(242, 242, 242));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setMaximumSize(new java.awt.Dimension(600, 590));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Lcliente.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -364,8 +369,7 @@ public class Horarios extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -375,71 +379,70 @@ public class Horarios extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,"Horario confirmado con exito");
         String horario = nhorariotxt.getText();
         String n="";
-         if(horario.contains(",")){
-             String a[] =new String[horario.length()];
-           for(int i=0;i<horario.length();i++){
-           
-           a[i] = ""+horario.charAt(i);
-               if(a[i].equals(",")){
-                   n = n +"\n";
-               }else{
-                   n = n + horario.charAt(i)+"";
-               }
-           }           
+        if(horario.contains(",")){
+            String a[] =new String[horario.length()];
+            for(int i=0;i<horario.length();i++){
+
+                a[i] = ""+horario.charAt(i);
+                if(a[i].equals(",")){
+                    n = n +"\n";
+                }else{
+                    n = n + horario.charAt(i)+"";
+                }
+            }
         }else{
             n=horario;
         }
-         String nom = nombrehtxt.getText();
+        String nom = nombrehtxt.getText();
         String memb = membrhtxt.getText();
         datostxt.setText(nom+"\n"+memb+"\n"+n);
     }//GEN-LAST:event_confhbtnActionPerformed
-
-    private void confhorariobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confhorariobtnActionPerformed
-      String n="";
-    
-        String horario = nhorariotxt.getText();
-        /*if(horario.contains(",")){
-             String a[] =new String[horario.length()];
-           for(int i=0;i<horario.length();i++){
-           
-           a[i] = ""+horario.charAt(i);
-               if(a[i].equals(",")){
-                   n = n +"\nsin horario  ->  ";
-               }else{
-                   n = n + horario.charAt(i)+"";
-               }
-           }           
-        }else{
-            n=horario;
-        }
-*/  //CODIGO FUNCIONAL DE PRUEBA DEL HORARIO
-      // mhorariotxt.setText("sin horario "+"  ->  "+n);
-       GYM_app g = new GYM_app();     
-        String datos_e = g.leer_horario(membrhtxt.getText(),horario);
-        mhorariotxt.setText(datos_e);
-      
-       
-    }//GEN-LAST:event_confhorariobtnActionPerformed
-
-    private void buscarhbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarhbtnActionPerformed
-       String nom = nombrehtxt.getText();
-        String memb = membrhtxt.getText();
-        
-      //datostxt.setText(nom+"\n"+memb+"\n sin horario\n");
-      
-       String rutaProyecto = System.getProperty("user.dir");
-         String archivo= rutaProyecto+"\\src\\Doc\\"+memb+".txt"; 
-         GYM_app g = new GYM_app();
-        String datos_e = g.leer(memb);
-                    
-         datostxt.setText(datos_e);
-        
-    }//GEN-LAST:event_buscarhbtnActionPerformed
 
     private void cambiarhobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarhobtnActionPerformed
         panelh1.setVisible(true);
         panelh2.setVisible(true);
     }//GEN-LAST:event_cambiarhobtnActionPerformed
+
+    private void confhorariobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confhorariobtnActionPerformed
+        String n="";
+
+        String horario = nhorariotxt.getText();
+        /*if(horario.contains(",")){
+            String a[] =new String[horario.length()];
+            for(int i=0;i<horario.length();i++){
+
+                a[i] = ""+horario.charAt(i);
+                if(a[i].equals(",")){
+                    n = n +"\nsin horario  ->  ";
+                }else{
+                    n = n + horario.charAt(i)+"";
+                }
+            }
+        }else{
+            n=horario;
+        }
+        */  //CODIGO FUNCIONAL DE PRUEBA DEL HORARIO
+        // mhorariotxt.setText("sin horario "+"  ->  "+n);
+        GYM_app g = new GYM_app();
+        String datos_e = g.leer_horario(membrhtxt.getText(),horario);
+        mhorariotxt.setText(datos_e);
+
+    }//GEN-LAST:event_confhorariobtnActionPerformed
+
+    private void buscarhbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarhbtnActionPerformed
+        String nom = nombrehtxt.getText();
+        String memb = membrhtxt.getText();
+
+        //datostxt.setText(nom+"\n"+memb+"\n sin horario\n");
+
+        String rutaProyecto = System.getProperty("user.dir");
+        String archivo= rutaProyecto+"\\src\\Doc\\"+memb+".txt"; 
+        GYM_app g = new GYM_app();
+        String datos_e = g.leer(memb);
+
+        datostxt.setText(datos_e);
+
+    }//GEN-LAST:event_buscarhbtnActionPerformed
 
     /**
      * @param args the command line arguments
