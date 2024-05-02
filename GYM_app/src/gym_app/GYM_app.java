@@ -111,10 +111,7 @@ public class GYM_app {
                                         }else{
                                                     datos_h=horario;
                                          }
-                                }                 
-                           }                           
-                            }
-                 }
+                                }}}}
             br.close();
             fr.close();       
             }catch(Exception e){
