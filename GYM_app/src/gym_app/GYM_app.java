@@ -6,6 +6,8 @@ package gym_app;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.Connection;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,29 +19,32 @@ public class GYM_app {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Runnable run = () ->{
+
+        conectar conecta = new conectar();
+
+        Connection con = conecta.getConexion();
+
+        Runnable run = () -> {
             Splash splash = new Splash();
             splash.setVisible(true);
-            
+
             try {
                 //timepo que tarda la pantalla de carga
                 Thread.sleep(5000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(GYM_app.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
             splash.dispose();
-            
-            login incio= new login();
+
+            login incio = new login();
             incio.setVisible(true);
-            
-            
+
         };
-        
+
         Thread hiloSplash = new Thread(run);
         hiloSplash.start();
-        
-        
+
     }
-    
+
 }
