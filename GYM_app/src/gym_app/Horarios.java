@@ -40,7 +40,7 @@ public class Horarios extends javax.swing.JFrame {
         initComponents();     
         panelh1.setVisible(false);
         panelh2.setVisible(false);
-        this.setLocationRelativeTo(this);
+        //this.setLocationRelativeTo(this);
         
 
         
