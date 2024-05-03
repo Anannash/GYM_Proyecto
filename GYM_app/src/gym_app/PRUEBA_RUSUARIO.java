@@ -21,7 +21,7 @@ import javax.imageio.ImageIO;
 public class PRUEBA_RUSUARIO extends javax.swing.JFrame {
     
     //Metodos
-     Reglas RImagen= new Reglas();
+     Reglas reglas= new Reglas();
       // Obtener la fecha actual
         LocalDate fechaActual = LocalDate.now();
         
@@ -38,6 +38,8 @@ public  File  archivoSeleccionado ;
         initComponents();
         this.setLocationRelativeTo(this);
         fecha.setText(fechaFormateada);
+        
+        id.setText(reglas.CrearID("C", fechaFormateada));
         
         
 
