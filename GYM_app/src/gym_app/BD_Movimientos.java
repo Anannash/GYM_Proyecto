@@ -99,7 +99,7 @@ public class BD_Movimientos {
         // Cerrar el ResultSet, el Statement y la conexión
         rs.close();
         stmt.close();
-        ObjetoConexion.getConexion().close();
+        
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Error: "+e.toString());
     }
