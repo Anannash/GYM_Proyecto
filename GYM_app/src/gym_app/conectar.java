@@ -19,9 +19,13 @@ public class conectar {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = (Connection) DriverManager.getConnection(URL, USER, CLAVE);
+            System.out.println("Se logro COnexion");
         }catch(Exception e){
             System.out.println("Error: " + e.getMessage());
         }
        return con;
      }
+     
+     
+     
 }

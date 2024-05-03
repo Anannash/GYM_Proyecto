@@ -25,11 +25,7 @@ import javax.swing.text.Document;
 
 /**
  *
-<<<<<<< HEAD
- * @author ANDREA MORALES CHAVEZ                  
-=======
- * @author ANDREA MORALES CHAVEZ uuyuy jjjggh
->>>>>>> origin/Andrea
+
  */
 public class Horarios extends javax.swing.JFrame {
 
@@ -150,10 +146,9 @@ public class Horarios extends javax.swing.JFrame {
         setBackground(new java.awt.Color(244, 246, 248));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setExtendedState(MAXIMIZED_BOTH);
-        setLocation(new java.awt.Point(300, 100));
+        setLocationByPlatform(true);
         setMaximizedBounds(new java.awt.Rectangle(600, 590, 590, 590));
         setMaximumSize(new java.awt.Dimension(600, 590));
-        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -424,7 +419,7 @@ public class Horarios extends javax.swing.JFrame {
         }
         */  //CODIGO FUNCIONAL DE PRUEBA DEL HORARIO
         // mhorariotxt.setText("sin horario "+"  ->  "+n);
-        GYM_app g = new GYM_app();
+        exclusivoKaren g = new exclusivoKaren();
         String datos_e = g.leer_horario(membrhtxt.getText(),horario);
         mhorariotxt.setText(datos_e);
 
@@ -438,7 +433,7 @@ public class Horarios extends javax.swing.JFrame {
 
         String rutaProyecto = System.getProperty("user.dir");
         String archivo= rutaProyecto+"\\src\\Doc\\"+memb+".txt"; 
-        GYM_app g = new GYM_app();
+        exclusivoKaren g = new exclusivoKaren();
         String datos_e = g.leer(memb);
 
         datostxt.setText(datos_e);
