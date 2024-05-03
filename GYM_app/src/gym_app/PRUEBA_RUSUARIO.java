@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.imageio.ImageIO;
 
 /**
@@ -20,34 +22,28 @@ public class PRUEBA_RUSUARIO extends javax.swing.JFrame {
     
     //Metodos
      Reglas RImagen= new Reglas();
+      // Obtener la fecha actual
+        LocalDate fechaActual = LocalDate.now();
+        
+        // Formatear la fecha como una cadena en el formato deseado (YYYY-MM-DD)
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String fechaFormateada = fechaActual.format(formatter);
+        
+        // Establecer la fecha formateada en el JTextField
+        
    //VARIABLES 
 public  File  archivoSeleccionado ;
 
     public PRUEBA_RUSUARIO() {
         initComponents();
         this.setLocationRelativeTo(this);
+        fecha.setText(fechaFormateada);
+        
+        
 
     }
 
-    private void seleccionarImagen() {
-        JFileChooser fileChooser = new JFileChooser();
-        int resultado = fileChooser.showOpenDialog(this);
 
-        if (resultado == JFileChooser.APPROVE_OPTION) {
-            File archivoSeleccionado = fileChooser.getSelectedFile();
-            ImageIcon imagenSeleccionada = new ImageIcon(archivoSeleccionado.getPath());
-
-            //Se escala la imagen al tamaño deseado
-            Image imagen = imagenSeleccionada.getImage();
-            int ancho = 200;
-            int alto = 240;
-            Image imagenCamb = imagen.getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
-
-            ImageIcon imagen2 = new ImageIcon(imagenCamb);
-
-            Perfil.setIcon(imagen2);
-        }
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,7 +59,7 @@ public  File  archivoSeleccionado ;
         jLabel1 = new javax.swing.JLabel();
         fecha = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        jButton = new javax.swing.JButton();
+        Cargar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         Perfil = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -80,7 +76,7 @@ public  File  archivoSeleccionado ;
         celular = new javax.swing.JTextField();
         edad = new javax.swing.JTextField();
         sexo = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        Guardar = new javax.swing.JButton();
         membresia = new javax.swing.JComboBox<>();
         ApellidoP = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -100,9 +96,13 @@ public  File  archivoSeleccionado ;
 
         fecha.setEditable(false);
         fecha.setBackground(new java.awt.Color(204, 204, 204));
-        fecha.setText("2024-05-01");
         fecha.setCaretColor(new java.awt.Color(153, 153, 153));
         fecha.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        fecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fechaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -111,7 +111,9 @@ public  File  archivoSeleccionado ;
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(436, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -119,18 +121,16 @@ public  File  archivoSeleccionado ;
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                .addGap(3, 3, 3)
+                .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jButton.setText("Cambiar Imagen");
-        jButton.addActionListener(new java.awt.event.ActionListener() {
+        Cargar.setText("Cambiar Imagen");
+        Cargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonActionPerformed(evt);
+                CargarActionPerformed(evt);
             }
         });
 
@@ -210,10 +210,10 @@ public  File  archivoSeleccionado ;
 
         sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "F", "M" }));
 
-        jButton1.setText("Generar Perfil");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Guardar.setText("Generar Perfil");
+        Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                GuardarActionPerformed(evt);
             }
         });
 
@@ -254,7 +254,7 @@ public  File  archivoSeleccionado ;
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
-                        .addComponent(jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Cargar, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(409, 409, 409)
@@ -292,7 +292,7 @@ public  File  archivoSeleccionado ;
                                             .addGap(53, 53, 53)
                                             .addComponent(jLabel10))))
                                 .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(0, 0, Short.MAX_VALUE))))
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,8 +343,8 @@ public  File  archivoSeleccionado ;
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Cargar)
+                            .addComponent(Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -392,7 +392,7 @@ public  File  archivoSeleccionado ;
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 36, Short.MAX_VALUE))
+                .addGap(0, 9, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -413,13 +413,38 @@ public  File  archivoSeleccionado ;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActionPerformed
+    private void CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarActionPerformed
 
-         RImagen.CargarImagen(Perfil, archivoSeleccionado);
+   //METODO PARA CARGAR IMAGEN desde el explorador
+             
+             JFileChooser fileChooser = new JFileChooser();
+        int resultado = fileChooser.showOpenDialog(null);
+
+        if (resultado == JFileChooser.APPROVE_OPTION) {
+             archivoSeleccionado = fileChooser.getSelectedFile();
+             String ruta = archivoSeleccionado.getName();
+             System.out.println(ruta);
+             
+             
+             try {
+                  Image imagenSeleccionada = ImageIO.read(archivoSeleccionado);
+                  ImageIcon Imagen = new ImageIcon(imagenSeleccionada);
+                  
+                  int labelancho = Perfil.getWidth();
+                  int labellargo=Perfil.getHeight();
+                  
+                  
+                  Image scaledImage = Imagen.getImage().getScaledInstance(labelancho, labellargo, Image.SCALE_SMOOTH);
+                  
+                  Perfil.setIcon(new ImageIcon (scaledImage));
+            } catch (Exception e) {
+                
+                    JOptionPane.showMessageDialog(null, "Error: "+e.toString());
+            }
+        }
         
         
-        
-    }//GEN-LAST:event_jButtonActionPerformed
+    }//GEN-LAST:event_CargarActionPerformed
 
     private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
         // TODO add your handling code here:
@@ -437,23 +462,23 @@ public  File  archivoSeleccionado ;
         // TODO add your handling code here:
     }//GEN-LAST:event_edadActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
         // TODO add your handling code here:
-        
+        //SE Genra Perfil
         BD_Movimientos  AddCl = new BD_Movimientos();
         
         
         
         if (SiE.isSelected()) {
             AddCl.AgregarCliente(Nombre, ApellidoP, ApellidoM, id, membresia, correo, celular, 
-                0, 0, 0, "NA", archivoSeleccionado,  sexo,"Si",edad);
+                0, 0, 0, "NA", archivoSeleccionado,java.sql.Date.valueOf(fechaActual),  sexo,"Si",edad);
         }else if (NoE.isSelected()){
             AddCl.AgregarCliente(Nombre, ApellidoP, ApellidoM, id, membresia, correo, celular, 
-                0, 0, 0, "NA", archivoSeleccionado,  sexo,"No",edad);
+                0, 0, 0, "NA", archivoSeleccionado,java.sql.Date.valueOf(fechaActual),  sexo,"No",edad);
         }
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_GuardarActionPerformed
 
     private void NoEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoEActionPerformed
         // TODO add your handling code here:
@@ -474,6 +499,10 @@ public  File  archivoSeleccionado ;
     private void SiEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiEActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SiEActionPerformed
+
+    private void fechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fechaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -516,6 +545,8 @@ public  File  archivoSeleccionado ;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ApellidoM;
     private javax.swing.JTextField ApellidoP;
+    private javax.swing.JButton Cargar;
+    private javax.swing.JButton Guardar;
     private javax.swing.JRadioButton NoE;
     private javax.swing.JTextField Nombre;
     private javax.swing.JLabel Perfil;
@@ -526,8 +557,6 @@ public  File  archivoSeleccionado ;
     private javax.swing.JTextField edad;
     private javax.swing.JTextField fecha;
     private javax.swing.JTextField id;
-    private javax.swing.JButton jButton;
-    private javax.swing.JButton jButton1;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

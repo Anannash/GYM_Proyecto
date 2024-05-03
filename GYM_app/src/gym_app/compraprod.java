@@ -390,7 +390,7 @@ public class compraprod extends javax.swing.JFrame {
         String prod = articuloctxt.getText();
         String articulo = arttxt.getText();
         
-        GYM_app g = new GYM_app();
+        exclusivoKaren g = new exclusivoKaren();
         String datos_e =""; 
         datos_e = datos_e + g.leer_producto(articulo,prod);
         compratxt.setText(datos_e);
@@ -398,7 +398,7 @@ public class compraprod extends javax.swing.JFrame {
 
     private void buscartbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscartbtnActionPerformed
         String articulo = arttxt.getText(); 
-         GYM_app g = new GYM_app();
+         exclusivoKaren g = new exclusivoKaren();
         String datos_e = g.leer(articulo);
         
         articulosarea.setText(datos_e);
@@ -407,7 +407,7 @@ public class compraprod extends javax.swing.JFrame {
 
     private void buscarprovbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarprovbtnActionPerformed
          String proveedor = provtxt.getText();
-         GYM_app g = new GYM_app();
+         exclusivoKaren g = new exclusivoKaren();
         String datos_e = g.leer(proveedor);
         
         articulosarea.setText(datos_e);

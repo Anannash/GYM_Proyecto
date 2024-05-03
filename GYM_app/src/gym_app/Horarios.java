@@ -25,11 +25,7 @@ import javax.swing.text.Document;
 
 /**
  *
-<<<<<<< HEAD
- * @author ANDREA MORALES CHAVEZ                  
-=======
- * @author ANDREA MORALES CHAVEZ uuyuy jjjggh
->>>>>>> origin/Andrea
+
  */
 public class Horarios extends javax.swing.JFrame {
 
@@ -423,7 +419,7 @@ public class Horarios extends javax.swing.JFrame {
         }
         */  //CODIGO FUNCIONAL DE PRUEBA DEL HORARIO
         // mhorariotxt.setText("sin horario "+"  ->  "+n);
-        GYM_app g = new GYM_app();
+        exclusivoKaren g = new exclusivoKaren();
         String datos_e = g.leer_horario(membrhtxt.getText(),horario);
         mhorariotxt.setText(datos_e);
 
@@ -437,7 +433,7 @@ public class Horarios extends javax.swing.JFrame {
 
         String rutaProyecto = System.getProperty("user.dir");
         String archivo= rutaProyecto+"\\src\\Doc\\"+memb+".txt"; 
-        GYM_app g = new GYM_app();
+        exclusivoKaren g = new exclusivoKaren();
         String datos_e = g.leer(memb);
 
         datostxt.setText(datos_e);

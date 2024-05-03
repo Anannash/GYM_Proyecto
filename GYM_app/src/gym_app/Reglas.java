@@ -23,14 +23,14 @@ public class Reglas {
     
     
     
-    public void CargarImagen(JLabel label, File archivoSeleccionado){
+    public void CargarImagen(JLabel label, File archivoSeleccionado){//Este no sive pero es util como   Plantilla
          JFileChooser fileChooser = new JFileChooser();
         int resultado = fileChooser.showOpenDialog(null);
 
         if (resultado == JFileChooser.APPROVE_OPTION) {
              archivoSeleccionado = fileChooser.getSelectedFile();
              String ruta = archivoSeleccionado.getName();
-             
+             System.out.println(ruta);
              
              
              try {
@@ -52,8 +52,19 @@ public class Reglas {
     }
     
     
-    public int CrearID(String valorUsuario){
-        return 0;
+    public String CrearID(String TipoUsuario, String ano){
+        // C 2024 5 1-1000
+        //Numero de la sucursal sera 5
+        String numSucursal = "5";
+        
+        BD_Movimientos numCl = new BD_Movimientos();
+        
+        
+        String ID = TipoUsuario+ano+numSucursal+numCl.obtenerUltimoNumeroCliente();
+        
+        
+        return ID;
     }
+    
     
 }
