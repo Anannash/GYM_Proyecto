@@ -145,6 +145,10 @@ public class compraprod extends javax.swing.JFrame {
         setBackground(new java.awt.Color(244, 246, 248));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setExtendedState(MAXIMIZED_BOTH);
+        setMaximizedBounds(new java.awt.Rectangle(839, 720, 720, 720));
+        setMaximumSize(new java.awt.Dimension(839, 720));
+        setMinimumSize(new java.awt.Dimension(839, 720));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -196,6 +200,9 @@ public class compraprod extends javax.swing.JFrame {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setMaximumSize(new java.awt.Dimension(811, 600));
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(811, 600));
+        jScrollPane1.setName(""); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(242, 242, 242));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -390,7 +397,7 @@ public class compraprod extends javax.swing.JFrame {
         String prod = articuloctxt.getText();
         String articulo = arttxt.getText();
         
-        exclusivoKaren g = new exclusivoKaren();
+        GYM_app g = new GYM_app();
         String datos_e =""; 
         datos_e = datos_e + g.leer_producto(articulo,prod);
         compratxt.setText(datos_e);
@@ -398,7 +405,7 @@ public class compraprod extends javax.swing.JFrame {
 
     private void buscartbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscartbtnActionPerformed
         String articulo = arttxt.getText(); 
-         exclusivoKaren g = new exclusivoKaren();
+         GYM_app g = new GYM_app();
         String datos_e = g.leer(articulo);
         
         articulosarea.setText(datos_e);
@@ -407,7 +414,7 @@ public class compraprod extends javax.swing.JFrame {
 
     private void buscarprovbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarprovbtnActionPerformed
          String proveedor = provtxt.getText();
-         exclusivoKaren g = new exclusivoKaren();
+         GYM_app g = new GYM_app();
         String datos_e = g.leer(proveedor);
         
         articulosarea.setText(datos_e);
