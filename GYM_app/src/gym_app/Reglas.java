@@ -52,13 +52,10 @@ public class Reglas {
     }
     
     
-    public String CrearID(String TipoUsuario, String fecha){
+    public String CrearID(String TipoUsuario, String ano){
         // C 2024 5 1-1000
         //Numero de la sucursal sera 5
         String numSucursal = "5";
-        
-        String []  fechac = fecha.split("-");
-        String ano = fechac[0];
         
         BD_Movimientos numCl = new BD_Movimientos();
         
