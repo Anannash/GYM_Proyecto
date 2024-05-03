@@ -47,8 +47,6 @@ public class BD_Movimientos {
 
             CallableStatement cs = (CallableStatement) ObjetoConexion.getConexion().prepareCall(Alta);
 
-           
-
             cs.setString(1, idCliente.getText());
             cs.setString(2, Membresia.getSelectedItem().toString());
             cs.setString(3, nombre.getText());
@@ -75,37 +73,55 @@ public class BD_Movimientos {
         }
     }
 
-    public int obtenerUltimoNumeroCliente() {
-    int ultimoNumero = 0;
-    
-    // Aquí deberías tener tu lógica para obtener la conexión a tu base de datos
-    conectar ObjetoConexion = new conectar();
-    
-    // Consulta SQL para obtener el máximo número de cliente
-    String consulta = "SELECT MAX(id_cliente) AS ultimo_numero FROM cliente";
-    
-    try {
-        // Crear la sentencia SQL
-        java.sql.Statement stmt = ObjetoConexion.getConexion().createStatement();
-        
-        // Ejecutar la consulta y obtener el resultado
-        ResultSet rs = stmt.executeQuery(consulta);
-        
-        // Si se encontraron resultados, obtener el máximo número de cliente
-        if (rs.next()) {
-            ultimoNumero = rs.getInt("ultimo_numero");
+    public String obtenerUltimoNumeroCliente() {
+        String ultimoID = "";
+        String nuevoID = "";
+
+        // Aquí deberías tener tu lógica para obtener la conexión a tu base de datos
+        conectar ObjetoConexion = new conectar();
+
+        // Consulta SQL para obtener el máximo número de cliente
+        String consulta = "SELECT MAX(id_cliente) AS ultimo_numero FROM cliente";
+
+        try {
+            // Crear la sentencia SQL
+            java.sql.Statement stmt = ObjetoConexion.getConexion().createStatement();
+
+            // Ejecutar la consulta y obtener el resultado
+            ResultSet rs = stmt.executeQuery(consulta);
+
+            // Si se encontraron resultados, obtener el máximo número de cliente
+            if (rs.next()) {
+                ultimoID = rs.getString("ultimo_numero");
+            }
+
+            // Si no se encontró ningún ID, asignar el primero de la serie
+            if (ultimoID == null) {
+                nuevoID = "C202450"; // Primer ID de la serie
+            } else {
+                // Extraer el número después del prefijo 'C20245'
+                String numeroStr = ultimoID.substring(ultimoID.indexOf('5') + 1);
+
+// Convertir el número a entero
+                int numero = Integer.parseInt(numeroStr);
+
+// Incrementar el número
+                int nuevoNumero = numero + 1;
+
+                // Construir el nuevo ID concatenando las partes
+                nuevoID = String.valueOf(nuevoNumero);
+            }
+
+            return nuevoID;
+            // Cerrar el ResultSet, el Statement y la conexión
+            //   rs.close();
+            //  stmt.close();
+            // ObjetoConexion.getConexion().close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString());
+            return "";
         }
-        
-        // Cerrar el ResultSet, el Statement y la conexión
-        rs.close();
-        stmt.close();
-        ObjetoConexion.getConexion().close();
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Error: "+e.toString());
+
     }
-    
-    return ultimoNumero;
-}
-    
 
 }
